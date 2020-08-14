@@ -6,9 +6,12 @@
     border-radius: 99px;
     display: flex;
     align-items: center;
+    outline: none;
+    transition: var(--fade);
 
     &:hover {
         background-color: var(--c-theme-20);
+        color: var(--c-theme);
     }
 
     svg {
