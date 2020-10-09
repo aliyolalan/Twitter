@@ -1,2 +1,2 @@
-import '../styles/styles.css'
+import '../styles/app.css'
 import './style.css'

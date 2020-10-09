@@ -1,13 +1,21 @@
 import React from 'react'
 
-import Button from '../components/Button'
+import CONST from '../constants'
+import Layout from '../components/Layout'
+import Sidebar from '../components/Col-Sidebar'
+import Main from '../components/Col-Main'
+import Extra from '../components/Col-Extra'
+import useWindowSize from '../hook/useWindowSize'
 
 function HomePage() {
+  const size = useWindowSize()
+
   return (
-    <div>
-      <h3>Here Comes The Rain Again</h3>
-      <Button>Merhaba</Button>
-    </div>
+    <Layout>
+      <Sidebar flat={size.width < CONST.DESKTOP_SIZE}>Sidebar</Sidebar>
+      <Main> {JSON.stringify(size)}</Main>
+      {size.width > CONST.TABLET_SIZE && <Extra>Extra</Extra>}
+    </Layout>
   )
 }
 
